@@ -1,4 +1,4 @@
-package PageObject;
+package pageObject;
 
 import com.codeborne.selenide.Condition;
 import io.qameta.allure.Step;
@@ -16,7 +16,6 @@ public class BugPage {
 
     @Step("Проверка удачной авторизации")
     public static void isOpened() {
-        open("https://edujira.ifellow.ru/secure/Dashboard.jspa");
         $x(header).exists();
     }
 
@@ -34,8 +33,6 @@ public class BugPage {
         int num2 = Integer.parseInt(num);
         int num3 = $$(By.xpath("//div[@class='ghx-issue-content']")).size();
         Assertions.assertEquals(num2, num3);
-        System.out.println("Колличество задач в списке задач  " + num2);
-        System.out.println("Колличество задач построчно  " + num3);
     }
 
     static String createBug = "//a[@id='create_link']";
